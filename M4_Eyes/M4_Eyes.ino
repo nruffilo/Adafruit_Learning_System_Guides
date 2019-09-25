@@ -127,10 +127,12 @@ void fatal(const char *message, uint16_t blinkDelay) {
 
 #include <unistd.h> // sbrk() function
 
+/* This is defined also in memory.cpp -> having it defined twice fails compilation
 uint32_t availableRAM(void) {
   char top;                      // Local variable pushed on stack
   return &top - (char *)sbrk(0); // Top of stack minus end of heap
 }
+*/
 
 // SETUP FUNCTION - CALLED ONCE AT PROGRAM START ---------------------------
 
